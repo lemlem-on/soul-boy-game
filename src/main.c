@@ -1,3 +1,7 @@
+// -------------------------------------------------------------
+// -           soul boy game - program by lemon4j              -
+// -------------------------------------------------------------
+
 #include "raylib.h"
 #include "vars.h"
 #include "res.h"
@@ -40,7 +44,6 @@ int main() {
                 break;
             }
             case STATE_TITLE:{
-                titleScreenSecuence();
                 break;
             }
                 break;
@@ -48,13 +51,6 @@ int main() {
                 break;
             }
             case STATE_RESET:{
-                hudEventActionTimer = 0;
-                animationsTimer = 0;
-                transparency = 255;
-                doScaling = true;
-                logoScaling.x = 0;
-                logoScaling.y = 0;
-                currentState = STATE_TITLE;
                 break;
             }
             }

@@ -13,24 +13,6 @@ void initGameLogo(){
             , 0
             , (Color) {255,255,255,transparency}); 
 
-    if(doScaling == true){
-        logoScaling.x++;
-        logoScaling.y++;
-    }
-    
-    if (logoScaling.x > 256){
-        doScaling = false;
-    }
-
-    if (animationsTimer > 320){
-        transparency = transparency - 10;
-    }
-
-    if (transparency < 0){
-        currentState = STATE_RESET;
-    }
-
-    animationsTimer = animationsTimer + 1;
 }
 
 #endif
