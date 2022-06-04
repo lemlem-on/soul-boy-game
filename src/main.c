@@ -7,21 +7,24 @@
 #include "res.h"
 #include "initgame.c"
 #include "titlescreen.c"
+#include "testlevel.c"
+#include "player.c"
 
 #define max(a, b) ((a)>(b)? (a) : (b))
 #define min(a, b) ((a)<(b)? (a) : (b))
 
 int main() {
-    const int windowWidth = 768;
+    const int windowWidth = 1056;
     const int windowHeight = 672;
 
     SetConfigFlags(FLAG_WINDOW_RESIZABLE | FLAG_VSYNC_HINT);
     InitWindow(windowWidth, windowHeight, "");
     SetWindowMinSize(320, 240);
 
+    InitAudioDevice();
     loadResources();
 
-    int gameScreenWidth = 256;
+    int gameScreenWidth = 352;
     int gameScreenHeight = 224;
 
     RenderTexture2D target = LoadRenderTexture(gameScreenWidth, gameScreenHeight);
@@ -37,6 +40,7 @@ int main() {
         BeginTextureMode(target);
 
             ClearBackground(BLACK);
+            DrawRectangle(352, 224, 0, 0, BLACK);
 
             switch(currentState){
             case STATE_LOGO:{
@@ -44,10 +48,12 @@ int main() {
                 break;
             }
             case STATE_TITLE:{
+                titleScreenSecuence();
                 break;
             }
                 break;
             case STATE_PLAY:{
+                renderLevel();
                 break;
             }
             case STATE_RESET:{

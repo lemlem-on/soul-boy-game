@@ -3,16 +3,30 @@
 
 #include "raylib.h"
 
-    Texture2D lemLogo;
+    Texture2D logo;
     Texture2D titleScreen;
-    Texture2D titleScreenFloor;
-    Texture2D skyBackground;
+
+    Texture2D playerUp;
+    Texture2D playerDown;
+    Texture2D playerLeft;
+    Texture2D playerRight;
+
+    //Sound logoChime;
+
+    Music testmusic;
 
     void loadResources(){
-        lemLogo = LoadTexture("../res/lemLogo.png");
+        logo = LoadTexture("../res/logo.png");
         titleScreen = LoadTexture("../res/titleScreen.png");
-        titleScreenFloor = LoadTexture("../res/titleScreenFloor.png");
-        skyBackground = LoadTexture("../res/skyBackground.png");
+
+        playerUp = LoadTexture("../res/playerUp.png");
+        playerDown = LoadTexture("../res/playerDown.png");
+        playerLeft = LoadTexture("../res/playerLeft.png");
+        playerRight = LoadTexture("../res/playerRight.png");
+
+        //logoChime = LoadSound("../res/aud/logochime.mp3");
+
+        testmusic = LoadMusicStream("../res/aud/testmusic.mp3");
     }
 
 #endif

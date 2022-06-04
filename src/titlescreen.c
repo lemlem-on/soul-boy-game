@@ -6,38 +6,26 @@
 #include "vars.h"
 
 void titleScreenSecuence(){
-    DrawTexture(skyBackground, 0, 0, WHITE);
-    DrawTexturePro(titleScreenFloor
-            ,(Rectangle) { floorPosition.x, 0, 256, logoScaling.y }
-            ,(Rectangle) { 0, 0, 256, 224 }
-            ,(Vector2) { 0, 0 }
-            , 0
-            , WHITE); 
-
-    floorPosition.x = floorPosition.x + 1;
-
+    animationsTimer = animationsTimer - 1;
+    UpdateMusicStream(testmusic);
     DrawTexturePro(titleScreen
-            ,(Rectangle) { 0, 0, 256, logoScaling.y }
-            ,(Rectangle) { 0, 0, 256, 224 }
+            ,(Rectangle) { 0, 0, titleScaling.x, 224 }
+            ,(Rectangle) { 0, 0, 352, 224 }
             ,(Vector2) { 0, 0 }
             , 0
-            , WHITE); 
+            , (Color) {255,255,255,transparency}); 
 
-    if (doTransition == true){
-        DrawRectangle(0, 0, 256, 224, (Color) {255,255,255,transparency});
-        transparency = transparency - 10;
-        if (transparency < 0){
-            doTransition = false;
-            transparency = 255;
-        }
-    } 
-    
-    if (doScaling == true){
-        logoScaling.y = logoScaling.y + 5;
-        if (logoScaling.y > 224){
-            doScaling = false;
-            logoScaling.y = 224;
-        }
+    if (doScaling){
+        titleScaling.x = titleScaling.x + 2;
+    }
+
+    if (titleScaling.x > 352){
+        doScaling = !doScaling;
+        titleScaling.x = 352;
+    }
+
+    if (animationsTimer == -550){
+
     }
 }
     

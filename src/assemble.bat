@@ -1,0 +1,2 @@
+del *.exe
+tcc -o game.exe main.c C:\raylib\raylib\src\raylib.rc.data -std=c99 -Wall -I$(RAYLIB_PATH)\src -Iexternal -DPLATFORM_DESKTOP -L C:\raylib\raylib\src -lmsvcrt -lraylib -lopengl32 -lgdi32 -lwinmm -lkernel32 -lshell32 -luser32 -Wl,-subsystem=gui

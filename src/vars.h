@@ -23,20 +23,24 @@ enum GAME_STATE currentState;
 
 //int
 int hudEventActionTimer = 0;
-int animationsTimer = 0;
+int animationsTimer = 100;
 int transparency = 255;
 
 //bool
 bool doScaling = true;
 bool doTransition = true;
 bool titleVariableForSomething = true;
+bool enableMusic = false;
 
 //-----------------------------------------------------------------
 //             position / dims related stuff
 //-----------------------------------------------------------------
 
 //vector
-Vector2 logoScaling = {0, 0};
+Vector2 titleScaling = {0, 0};
 Vector2 floorPosition = {0, 0};
+
+int playerPosX = 100;
+int playerPosY = 100;
 
 #endif
